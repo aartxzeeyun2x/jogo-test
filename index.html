@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jogo de plataforma 2D inspirado na Kings League.">
+  <title>Kings League 2D — Desafio pelo título</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="top">
+      <div class="brand"><span class="brand-mark">KL</span><div><strong>KINGS LEAGUE</strong><small>DESAFIO 2D</small></div></div>
+      <div class="top-tag">JOGO DE PLATAFORMA 2D</div>
+    </header>
+
+    <section class="intro">
+      <div>
+        <p class="eyebrow">CAMPEONATO • MODO ARCADE</p>
+        <h1>Entre em campo.<br><span>Conquiste a taça.</span></h1>
+        <p class="lead">Colete as bolas, supere os adversários e avance pelas etapas da partida. Não deixe o adversário marcar!</p>
+      </div>
+      <div class="trophy" aria-hidden="true">🏆</div>
+    </section>
+
+    <section class="game-shell" aria-label="Área do jogo">
+      <div class="hud">
+        <div class="hud-cell"><small>ETAPA</small><strong id="phaseLabel">1º TEMPO</strong></div>
+        <div class="hud-cell"><small>PLACAR</small><strong><span id="score">0</span> <i>×</i> <span id="opponentScore">0</span></strong></div>
+        <div class="hud-cell"><small>BOLAS</small><strong id="items">0/5</strong></div>
+        <div class="hud-cell"><small>RELÓGIO</small><strong id="timer">20:00</strong></div>
+        <div class="hud-cell"><small>JOGADORES</small><strong id="players">1 × 1</strong></div>
+      </div>
+
+      <div class="canvas-wrap">
+        <canvas id="game" width="960" height="540" aria-label="Jogo Kings League 2D"></canvas>
+        <div class="overlay" id="overlay">
+          <div class="overlay-card">
+            <p class="eyebrow" id="overlayEyebrow">KINGS LEAGUE 2D</p>
+            <h2 id="overlayTitle">Pronto para jogar?</h2>
+            <p id="overlayText">Use A/D ou as setas para correr, Espaço para pular e C para ativar sua carta secreta no segundo tempo. Colete 5 bolas e leve até o gol para avançar.</p>
+            <button id="mainButton">COMEÇAR PARTIDA</button>
+          </div>
+        </div>
+      </div>
+      <div class="controls">
+        <span><kbd>←</kbd> <kbd>→</kbd> / <kbd>A</kbd> <kbd>D</kbd> correr</span>
+        <span><kbd>ESPAÇO</kbd> pular / confirmar shootout</span>
+        <span><kbd>C</kbd> carta secreta</span>
+        <span><kbd>P</kbd> pausar</span>
+      </div>
+      <div class="mobile-controls">
+        <button id="leftBtn" aria-label="Mover para esquerda">◀</button>
+        <button id="jumpBtn" aria-label="Pular">▲ PULAR</button>
+        <button id="rightBtn" aria-label="Mover para direita">▶</button>
+      </div>
+    </section>
+
+    <section class="info-grid">
+      <article class="info-card">
+        <span class="info-icon">⚽</span><h3>Objetivo</h3>
+        <p>Recolha 5 bolas e leve o personagem até o gol para marcar e avançar para a próxima etapa.</p>
+      </article>
+      <article class="info-card">
+        <span class="info-icon">⏱</span><h3>Formato Kings League</h3>
+        <p>Dois tempos: 20 minutos no primeiro e 16 no segundo. No modo arcade, cada segundo real representa um minuto de jogo.</p>
+      </article>
+      <article class="info-card">
+        <span class="info-icon">🃏</span><h3>Carta secreta</h3>
+        <p>No segundo tempo, pressione C para usar uma carta especial. Cada partida sorteia uma das sete cartas.</p>
+      </article>
+    </section>
+
+    <section class="rules">
+      <h2>Regras adaptadas para o jogo</h2>
+      <p>O primeiro tempo apresenta a entrada progressiva de jogadores e gols em dobro nos minutos finais. No segundo tempo, o dado define a formação reduzida e uma carta secreta fica disponível. Se o placar terminar empatado, acontece o shootout; se houver liderança, começa o Matchball.</p>
+      <p class="note">Este é um jogo de plataforma 2D acadêmico inspirado nas regras fornecidas. As regras esportivas foram adaptadas para a jogabilidade.</p>
+    </section>
+
+    <footer>Projeto acadêmico • Desenvolvimento Web II • HTML, CSS e JavaScript</footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
